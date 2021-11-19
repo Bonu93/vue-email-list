@@ -11,9 +11,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: sandybrown;
 }
 
 #app {
     margin-top: 2rem;
     text-align: center;
+}
+
+h1 {
+    margin-bottom: 3rem;
+}
+
+.email {
+    text-align: left;
+    list-style: none;
+    margin-bottom: 1rem;
 }
