@@ -23,7 +23,10 @@ const app = new Vue({
     },
     
     computed: {
-
+        mailListOk() {
+            return this.mailList.length === 10 ?
+                true : false;
+        },
     },
 
     methods: {
