@@ -15,23 +15,24 @@ const app = new Vue({
     data: {
         apiURL: 'https://flynn.boolean.careers/exercises/api/random/mail',
         mailList: [],
+        emailTot: 10,
     },
 
+    computed: {
+        mailListOk() {
+            return this.mailList.length === this.emailTot ?
+                true : false;
+        },
+    },
 
     created() {
        this.getMailList();
     },
     
-    computed: {
-        mailListOk() {
-            return this.mailList.length === 10 ?
-                true : false;
-        },
-    },
 
     methods: {
             getMailList() {
-                for (let i = 0; i < 10; i++) {
+                for (let i = 0; i < this.emailTot; i++) {
                     axios.get(this.apiURL)
                     .then((result) => {
                         this.mailList.push(result.data.response);
